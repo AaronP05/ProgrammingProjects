@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<header>
+	<link rel="stylesheet" href={{ url_for( 'static', filename='user.css' )}} />
+	<div class="topnav">
+</div>
+	
+			
+	</form>
+	<body>
+  	
+		<input type="hidden" name='current_user' value={{user}}> 
+ 
+	
+	  <div class="topnav" id="myTopnav">
+		<form action="" method="POST">
+			<input type="hidden" name='current_user' value={{user}}> 
+				  <button name="chat_button" type="submit" class="btn profile-edit-btn" style="float: left">Manage Transactions</button>
+		</form>
+		
+		<form action="password_success" method="POST">
+			<input type="hidden" name='current_user' value={{user}}> 
+				  <button name="chat_button" type="submit" class="btn profile-edit-btn" style="float: left">Transaction History</button>
+		</form>
+		 
+		<form action="/edit_profile" method="POST">
+			<input type="hidden" name='current_user' value={{user}}> 
+				  <button name="chat_button" type="submit" class="btn profile-edit-btn" style="float: left">Edit Profile</button>
+		</form>
+	  </div>
+	  
+
+  <div style="text-align:center">
+	<h2>USER</h2>
+	</div>
+
+</body>
+
+
+
+
+
+
+	<div class="container">
+
+		<div class="profile">
+
+			<div class="profile-image">
+
+				<img src="https://t4.ftcdn.net/jpg/03/46/93/61/360_F_346936114_RaxE6OQogebgAWTalE1myseY1Hbb5qPM.jpg" alt="">
+
+			</div>
+
+			<div class="profile-user-settings">
+
+				<h1 class="profile-user-name">{{user}}</h1>
+
+				<h1 class="profile-user-email">{{user}}</h1>
+				
+				
+			</div>
+
+			
+
+
+
+
+
+			<div class="profile-bio">
+
+				<p><span class="profile-real-name">{{username}}</span> 🎵  Show Your Sound! 🎵️</p>
+
+				
+				
+
+			</div>
+
+		</div>
+		<!-- End of profile section -->
+
+	</div>
+	<!-- End of container -->
+
+</header>
+
+
+            
+            <form action="/login" name="form1" method="post" action="login.html">
+				<label class="logoutLblPos">
+				<input name="submit2" type="submit" id="submit2" value="Log out" class="btn profile-edit-btn" >
+				</label>
+			  </form>
+
+		</div>
+
+</main>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href={{ url_for( 'static', filename='admin.css' ) }} />
+    <title>InstaVibe: Show Your Sound</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+</head>
+
+<body> 
+    <div style="text-align:center">
+        <h1>{{user}}'s Post</h1>
+        <h1>{{song}}</h1>
+        <h3>By: {{name}}</h3>
+        <br>
+        	<img src={{image_url}} height="300px" width="300px" class="rounded">
+        	<div style="text-align:center">
+                <a style="font-size: 12px" href={{lyrics}}>Click here to see the lyrics!</a>
+            </div>
+        	<h3>{{user}}: {{caption}}</h3>
+        	<br>
+        	{% if comments != None %}
+				{% for comment in comments %}
+				    <h2>{{commenters[loop.index0]}}: {{comments[loop.index0]}}</h2>
+					<br>
+	            {% endfor %}
+            {% endif %}
+        	<form action = "/add_comment" method = "POST">
+        	    <input type="hidden" name='post_id' class="form-control input_pass" value={{post_id}}>
+				<input type="text" name="message" class="form-control input_pass" value="" placeholder="Type here!">
+				<button button name="button" type = "submit" value = "Send" class="btn profile-edit-btn">Send Message</button>
+			</form>
+			<button name="button" class="btn back_btn" type = "submit" value = "back" onClick="window.history.go(-1);">Back</button>
+    </div>
+    <br>
+    <div class='audio-container'>
+        <audio controls>
+          <source src={{song_preview}} type="audio/mpeg">
+        </audio>
+    </div>
+
+</body>
+
+</html>

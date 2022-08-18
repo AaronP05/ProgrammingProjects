@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<header>
+	<link rel="stylesheet" href={{ url_for( 'static', filename='adminpage.css' )}} />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<div class="topnav">
+</div>
+	<form action = "/search" method = "POST">
+		<div class="input-group mb-3">
+			<input type="text" name="searched_user" class="form-control input_user" value="" placeholder="Search...">
+			<button name="button" class="btn profile-edit-btn" type = "search" value = "Search">Search</button>
+		</div>
+		
+	</form>
+
+  <body>
+  	
+  		<input type="hidden" name='current_user' value={{user}}> 
+  	
+	    <div class="topnav" id="myTopnav">
+	      <form action="/community" method="POST">
+	      	<input type="hidden" name='current_user' value={{user}}> 
+					<button name="chat_button" type="submit" class="btn profile-edit-btn" style="float: left">Community Guidelines</button>
+	      </form>
+	      
+	      <form action="/admin_register" method="POST">
+	      	<input type="hidden" name='current_user' value={{user}}> 
+					<button name="chat_button" type="submit" class="btn profile-edit-btn" style="float: left">Create User Account</button>
+	      </form>
+	       
+	      <form action="/chat_list" method="POST">
+	      	<input type="hidden" name='current_user' value={{user}}> 
+					<button name="chat_button" type="submit" class="btn profile-edit-btn" style="float: left">Direct Chat</button>
+	      </form>
+	    </div>
+		
+
+    <div style="text-align:center">
+      <h2>ADMIN</h2>
+      </div>
+
+  </body>
+
+
+	<div class="container">
+
+		<div class="profile">
+
+			<div class="profile-image">
+
+				<img src="https://t4.ftcdn.net/jpg/03/46/93/61/360_F_346936114_RaxE6OQogebgAWTalE1myseY1Hbb5qPM.jpg" alt="">
+
+			</div>
+
+			<div class="profile-user-settings">
+
+				<h1 class="profile-user-name">{{user}}</h1>
+				<form action = "/create_post" method = "POST">
+					<button button name="button" type = "submit" value = "Create" class="btn profile-edit-btn">Create Post</button>
+				</form>
+				
+				<form action = "/disable" method = "POST">
+					<button button name="button" type = "submit" value = "Disable" class="btn profile-edit-btn">Disable User</button>
+				</form>
+
+			</div>
+
+			<div class="profile-bio">
+
+				<p><span class="profile-real-name">{{username}}</span> 🎵  Instavibe Administrator 🎵️</p>
+
+			</div>
+
+		</div>
+		<!-- End of profile section -->
+
+	</div>
+	<!-- End of container -->
+
+</header>
+
+<main>
+
+	<div class="container">
+
+		<div class="gallery">
+			{% if ids != None %}
+				{% for post_id in ids %}
+				    <form action = "/view_post" method = "POST">
+		                <div class="gallery-item" tabindex="0">
+		                	<input type="hidden" name='post_id' class="form-control input_pass" value={{ids[loop.index0]}}>
+							<input type="image" src="{{snaps[loop.index0]}}" class="gallery-image" name='image'>
+						</div>
+					</form>
+					<br>
+					<br>
+	            {% endfor %}
+            {% endif %}
+            
+            <form action="/login" name="form1" method="post" action="login.html">
+				<label class="logoutLblPos">
+				<input name="submit2" type="submit" id="submit2" value="Log out" class="btn profile-edit-btn">
+				</label>
+			  </form>
+
+		</div>
+
+</main>
