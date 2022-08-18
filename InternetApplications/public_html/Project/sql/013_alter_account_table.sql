@@ -1,0 +1,1 @@
+ALTER TABLE Accounts ADD COLUMN active varchar(30);

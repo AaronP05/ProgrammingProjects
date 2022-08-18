@@ -1,0 +1,1 @@
+INSERT INTO Users(id, email, username, password) VALUES(-1, 'systemaccount@test.edu', 'system_user', 'aaron123');

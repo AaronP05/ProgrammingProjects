@@ -1,0 +1,1 @@
+ALTER TABLE Users ADD COLUMN fname varchar(30) NOT NULL;

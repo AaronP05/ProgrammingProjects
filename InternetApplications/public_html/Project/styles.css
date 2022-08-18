@@ -1,0 +1,68 @@
+.alert-success {
+    background-color: green
+}
+
+.alert-warning {
+    background-color: yellow;
+}
+
+.alert-danger {
+    background-color: red;
+}
+
+.alert-info {
+    background-color: teal;
+}
+
+
+
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: rgb(170, 169, 243);
+  }
+  nav {
+      margin-top:75px
+  }
+  body{
+      background-color:rgb(230, 230, 245)
+      
+      
+  }
+
+
+ul {
+    position: fixed;
+    top:0;
+    width:100%;
+    list-style-type: none;
+    margin: 0;
+    padding: -5;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+   
+  }
+
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(227, 18, 18);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  h3 {
+    display: block;
+    font-size: 2em;
+    margin-top: -.7em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 20;
+    font-weight: bold;
+    float: right;
+  }
+  

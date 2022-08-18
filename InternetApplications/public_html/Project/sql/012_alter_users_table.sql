@@ -1,0 +1,1 @@
+ALTER TABLE Users ADD COLUMN stats varchar(8) default 'public';
