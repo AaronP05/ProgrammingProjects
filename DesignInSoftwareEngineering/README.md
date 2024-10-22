@@ -1,1 +1,1 @@
-# CS490-Summer-2021
+Social Media Application
